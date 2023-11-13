@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php 
+
+    $duLieu = [             
+    "L1" => ["Loại 1", ["SP11","Sản phẩm 11", 1000, "h11.jpg"], ["SP12","Sản phẩm 12", 1000, "h12a.jpg;h12b.jpg"]]  ,
+    "L2" => ["Loại 2", ["SP21","Sản phẩm 21", 2000, "h21a.jpg;h21b.jpg"], ["SP22","Sản phẩm 22", 2000, "h22.jpg"]],
+    "L3" => ["Loại 3", ["SP31","Sản phẩm 31", 3000, "h31.jpg"], ["SP32","Sản phẩm 32", 3000, "h32a.jpg;h32b.jpg;h32c.jpg"]]
+];
+
+
+//1.Xuất mảng trên theo định dạng 
+echo"<table border=1>";
+echo"<tr><th>STT</th><th>ten san pham</th><th>loai</th><th>gia</th><th>HINH</th></tr>";
+$stt=1;
+foreach($duLieu as $loai=>$sanpham){
+    foreach($sanpham as $k=>$v)
+    echo "<tr>";
+    echo"<td>".$stt."</td>";
+    echo"<td>".$v[1]."</td>";
+    echo"<td>".$sanpham[0]."</td>";
+    
+   // echo"<td>".$v[0]."</td>";
+    echo"<td>".$v[2]."</td>";
+    echo"<td><img src=".$v[2]."></td>";
+    echo"</tr>";
+    $stt++;
+}
+echo"</table>";
+
+
+    ?>
+</body>
+</html>
